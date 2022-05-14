@@ -28,7 +28,7 @@ void loop(){
         input = char_to_int(Serial.read());
     }
     
-    LED ^= 1 << input;
+    LED ^=  input;
 
     digitalWrite(LED1_PIN, LED&LED1);
     digitalWrite(LED2_PIN, LED&LED2);
@@ -45,8 +45,9 @@ uint8_t char_to_int (char i){
     LED = 0;
     
     while(1){
+        LED ^= HIGH;
         for(int i = LED1_PIN; i <= LED4_PIN; i++){
-            digitalWrite(i, LED^1);
+            digitalWrite(i, LED);
         }
         delay(100);
     }
