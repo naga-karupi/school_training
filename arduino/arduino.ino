@@ -34,6 +34,8 @@ void loop(){
     digitalWrite(LED2_PIN, LED&LED2);
     digitalWrite(LED3_PIN, LED&LED3);
     digitalWrite(LED4_PIN, LED&LED4);
+
+    input = 0;
 }
 
 uint8_t char_to_int (char i){
