@@ -28,7 +28,7 @@ void loop(){
         input = char_to_int(Serial.read());
     }
     
-    LED ^= 1 << input;
+    LED ^=  input;
 
     digitalWrite(LED1_PIN, LED&LED1);
     digitalWrite(LED2_PIN, LED&LED2);
