@@ -31,8 +31,13 @@ void setup(){
 
 void loop(){
   if(Serial.available()){
-    String s = Serial.readString();
-    int sint = s.toInt();
+    int i = 0;
+    char string[100];
+     while(Serial.available()){
+       string[i] = Serial.read();
+       i++;
+     }
+    int sint = atoi(string);
     
     for(int i = 0; sint>>4*i; i++){
       int push_error = push((sint>>(4*i))&0xF);
